@@ -1,1 +1,30 @@
-<p>details-page works!</p>
+<div class="card shadow my-4">
+    <img src="{{data.sprites.front_default}}" class="img-thumbnail" alt="...">
+    <div class="card-body mt-3 text-center">
+        <h1 class="card-title fw-bolder">{{data.name}}</h1>
+        <p class="card-text fs-4"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <p class="card-text fst-italic" >Abilities: {{data.abilities}}</p>
+        </li>
+        <li class="list-group-item">
+            <p class="card-text">Types: {{data.types[0].type.name}}</p>
+        </li>
+        <li class="list-group-item">
+            <p class="card-text">Order number: {{data.order}}
+            </li>
+            <li class="list-group-item">
+                <p class="card-text">Stats: {{data.stats[0].base_stat}}</p>
+            </li>
+            <li class="list-group-item">
+                <p class="card-text">Possible evolutions: {{data.forms}}</p>
+            </li>
+            <li class="list-group-item">
+                <p class="card-text">Moves: {{data.moves}}</p>
+            </li>
+        </ul>
+        <div class="text-center my-3">
+            <a routerLink="/" class='btn btn-lg back-btn'><i class="fas fa-reply"></i> Go Back</a>
+        </div>
+</div>

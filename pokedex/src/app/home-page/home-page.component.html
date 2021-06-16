@@ -1,11 +1,15 @@
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-    <div class="col">
+<form class="d-flex justify-content-center">
+    <input class="form-control my-5" type="search" placeholder="Search for Pokemon" aria-label="Search">
+    <button class="btn btn-search my-5 mx-2" type="submit">Search</button>
+</form>
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 ">
+    <div class="col" *ngFor="let pokemon of pokemons">
         <div class="card shadow my-3 text-center">
-            <img src="" class="card-img-top my-3" alt="...">
+            <img [src]="pokemon.sprites.front_default" class="card-img-top my-3" alt="pokemon-img">
             <div class="card-body">
-                <h5 class="card-title fw-bolder name-color my-4">NAME</h5>
+                <h2 class="card-title fw-bolder pokemon-name mb-5">{{pokemon.name}}</h2>
                 <div class="d-flex justify-content-center">
-                    <a href=""><button class="btn btn-color" type="button">Show more</button></a>
+                    <a [routerLink]="['/details/'+pokemon.id]" class="btn btn-details">Show details</a>
                 </div>
             </div>
         </div>
