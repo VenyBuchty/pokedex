@@ -23,3 +23,11 @@
     text-transform: uppercase;
   }
 }
+
+.attributes-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}

@@ -1,30 +1,41 @@
-<div class="card shadow my-4">
+<div class="card shadow my-4" *ngIf="data">
     <img src="{{data.sprites.front_default}}" class="img-thumbnail" alt="...">
     <div class="card-body mt-3 text-center">
         <h1 class="card-title fw-bolder">{{data.name}}</h1>
-        <p class="card-text fs-4"></p>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <p class="card-text fst-italic" >Abilities: {{data.abilities}}</p>
-        </li>
-        <li class="list-group-item">
-            <p class="card-text">Types: {{data.types[0].type.name}}</p>
-        </li>
-        <li class="list-group-item">
-            <p class="card-text">Order number: {{data.order}}
-            </li>
-            <li class="list-group-item">
-                <p class="card-text">Stats: {{data.stats[0].base_stat}}</p>
-            </li>
-            <li class="list-group-item">
-                <p class="card-text">Possible evolutions: {{data.forms}}</p>
-            </li>
-            <li class="list-group-item">
-                <p class="card-text">Moves: {{data.moves}}</p>
-            </li>
-        </ul>
-        <div class="text-center my-3">
+    <div class="poke-info">
+        <div class="stats text-center">
+            <span class="first cp-text col-md-6">HP {{data.stats[0].base_stat}} / </span>
+            <span class="cp-text col-md-6">XP {{data.base_experience}}</span>
+            <hr class="seperator">
+        </div>
+        <div class="attributes-container">
+            <div class="col attribute-content">
+                <h4>Abilities</h4>
+                <span class="card-text fst-italic" *ngFor="let a of data.abilities; let isLast = last">{{a.ability.name}}{{ !isLast ? ' / ' : ''}}</span>
+            </div>
+            <div class="col attribute-content">
+                <h4>Type</h4>
+                <span class="card-text" *ngFor="let t of data.types; let isLast = last">{{t.type.name}}{{ !isLast ? ' / ' : ''}}</span>
+            </div>
+            <div class="col attribute-content">
+                <h4>Order number</h4>
+                <span class="card-text">{{data.order}}</span>
+            </div>
+            <div class="col attribute-content">
+                <h4>Possible evolutions</h4>
+                <span class="card-text" *ngFor="let e of data.forms">{{e.name}}</span>
+            </div>
+        </div>
+        <div class="moves-container">
+            <div class="col text-center mx-2">
+                <h4>Moves:</h4>
+                <span class="card-text" *ngFor="let m of data.moves; let isLast = last">{{m.move.name}}{{ !isLast ? ',' : ''}}</span>
+            </div>
+        </div>
+        <div class="text-center my-5">
             <a routerLink="/" class='btn btn-lg back-btn'><i class="fas fa-reply"></i> Go Back</a>
         </div>
+    </div>
+        
 </div>
