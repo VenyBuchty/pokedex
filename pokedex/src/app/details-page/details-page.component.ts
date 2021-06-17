@@ -9,6 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class DetailsPageComponent implements OnInit {
   data:any;
+  evo: any;
   id:any;
 
   constructor(
@@ -19,6 +20,7 @@ export class DetailsPageComponent implements OnInit {
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
     this.getInfo();
+    this.getEvolution();
   }
 
   getInfo(){
@@ -26,7 +28,13 @@ export class DetailsPageComponent implements OnInit {
       this.data = data;
       console.log(this.data);
     })
+  }
 
+  getEvolution(){
+    this.dataService.getEvolution(this.id).subscribe(evo=> {
+      this.evo = evo;
+      console.log(this.evo);
+    })
   }
 
 }

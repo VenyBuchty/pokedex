@@ -1,39 +1,40 @@
-<div class="card shadow my-4" *ngIf="data">
+<div class="card shadow my-4 p-4" *ngIf="data">
     <img src="{{data.sprites.front_default}}" class="img-thumbnail" alt="...">
     <div class="card-body mt-3 text-center">
         <h1 class="card-title fw-bolder">{{data.name}}</h1>
     </div>
-    <div class="poke-info">
-        <div class="stats text-center">
-            <span class="first cp-text col-md-6">HP {{data.stats[0].base_stat}} / </span>
+    <div class="poke-info"> 
+        <div class="stats text-center fw-bolder fs-3 blue-font">
+            <span class="first cp-text col-md-6 ">HP {{data.stats[0].base_stat}} / </span>
             <span class="cp-text col-md-6">XP {{data.base_experience}}</span>
-            <hr class="seperator">
+            <hr class="seperator mx-3">
         </div>
-        <div class="attributes-container">
+        <div class="attributes-container fw-bolder">
             <div class="col attribute-content">
-                <h4>Abilities</h4>
-                <span class="card-text fst-italic" *ngFor="let a of data.abilities; let isLast = last">{{a.ability.name}}{{ !isLast ? ' / ' : ''}}</span>
+                <p>Abilities</p>
+                <span class="card-text blue-font" *ngFor="let a of data.abilities; let isLast = last">{{a.ability.name}}{{ !isLast ? ' / ' : ''}}</span>
             </div>
             <div class="col attribute-content">
-                <h4>Type</h4>
-                <span class="card-text" *ngFor="let t of data.types; let isLast = last">{{t.type.name}}{{ !isLast ? ' / ' : ''}}</span>
+                <p>Type</p>
+                <span class="card-text blue-font" *ngFor="let t of data.types; let isLast = last">{{t.type.name}}{{ !isLast ? ' / ' : ''}}</span>
             </div>
             <div class="col attribute-content">
-                <h4>Order number</h4>
-                <span class="card-text">{{data.order}}</span>
+                <p>Order number</p>
+                <span class="card-text blue-font">{{data.id}}</span>
             </div>
-            <div class="col attribute-content">
-                <h4>Possible evolutions</h4>
-                <span class="card-text" *ngFor="let e of data.forms">{{e.name}}</span>
+            <div class="col attribute-content" *ngIf="evo">
+                <p>Possible evolutions</p>
+                <span class="card-text blue-font" *ngFor="let e of evo.chain.evolves_to">{{e.species.name}}</span>
             </div>
         </div>
+        <hr class="seperator mx-3">
         <div class="moves-container">
-            <div class="col text-center mx-2">
-                <h4>Moves:</h4>
-                <span class="card-text" *ngFor="let m of data.moves; let isLast = last">{{m.move.name}}{{ !isLast ? ',' : ''}}</span>
+            <div class="col text-center mt-4">
+                <p class="fw-bolder">Moves</p>
+                <span class="card-text" *ngFor="let m of data.moves; let isLast = last">{{m.move.name}}{{ !isLast ? ', ' : ''}}</span>
             </div>
         </div>
-        <div class="text-center my-5">
+        <div class="text-center mt-4">
             <a routerLink="/" class='btn btn-lg back-btn'><i class="fas fa-reply"></i> Go Back</a>
         </div>
     </div>

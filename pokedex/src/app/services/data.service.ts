@@ -11,7 +11,7 @@ export class DataService {
   ) { }
 
   getPokemons() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=100`);
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=150`);
   }
 
   getMoreData(name: string) {
@@ -21,6 +21,9 @@ export class DataService {
 
   getInfo(id) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/`+id);
+  }
 
+  getEvolution(id) {
+    return this.http.get(`https://pokeapi.co/api/v2/evolution-chain/`+id);
   }
 }
