@@ -1,6 +1,6 @@
 .card {
   border-radius: 2rem;
-  max-width: 45rem;
+  max-width: 50rem;
   margin: 0 auto;
 }
 
@@ -51,6 +51,14 @@
 
 .blue-font {
   color: #3661a8;
+  font-size: 1.2rem;
   font-weight: 700;
+}
+
+.list-group {
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 /*# sourceMappingURL=details-page.component.css.map */

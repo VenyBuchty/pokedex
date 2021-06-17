@@ -11,27 +11,29 @@
         </div>
         <div class="attributes-container fw-bolder">
             <div class="col attribute-content">
-                <p>Abilities</p>
+                <p class="fw-bolder">Abilities</p>
                 <span class="card-text blue-font" *ngFor="let a of data.abilities; let isLast = last">{{a.ability.name}}{{ !isLast ? ' / ' : ''}}</span>
             </div>
             <div class="col attribute-content">
-                <p>Type</p>
+                <p class="fw-bolder">Type</p>
                 <span class="card-text blue-font" *ngFor="let t of data.types; let isLast = last">{{t.type.name}}{{ !isLast ? ' / ' : ''}}</span>
             </div>
             <div class="col attribute-content">
-                <p>Order number</p>
+                <p class="fw-bolder">Order number</p>
                 <span class="card-text blue-font">{{data.id}}</span>
             </div>
             <div class="col attribute-content" *ngIf="evo">
-                <p>Possible evolutions</p>
+                <p class="fw-bolder">Possible evolutions</p>
                 <span class="card-text blue-font" *ngFor="let e of evo.chain.evolves_to">{{e.species.name}}</span>
             </div>
         </div>
         <hr class="seperator mx-3">
         <div class="moves-container">
             <div class="col text-center mt-4">
-                <p class="fw-bolder">Moves</p>
-                <span class="card-text" *ngFor="let m of data.moves; let isLast = last">{{m.move.name}}{{ !isLast ? ', ' : ''}}</span>
+                <p class="fw-bolder">Moves - <span class="blue-font">{{data.moves.length}} <i class="fas fa-angle-double-down"></i></span></p>
+                <ul class="list-group">
+                    <li class="list-group-item border-top list-group-item-primary text-dark" *ngFor="let m of data.moves">{{m.move.name}}</li>
+                </ul>
             </div>
         </div>
         <div class="text-center mt-4">
