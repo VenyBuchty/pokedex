@@ -10,8 +10,9 @@ export class DataService {
     private http: HttpClient
   ) { }
 
+  /* Limit wurde auf 150 gestellte, sonst zu lange lade Zeit. Mögliche Lösung - Infinit-Scroll oder Pagination*/
   getPokemons() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=100`);
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=150`);
   }
 
   getMoreData(name: string) {
