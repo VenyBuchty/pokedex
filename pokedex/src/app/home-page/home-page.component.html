@@ -6,7 +6,7 @@
                 <h3 class="card-title fw-bolder pokemon-name mt-3">{{pokemon.name}}</h3>
                 <p>#{{pokemon.id}}</p>
                 <div class="d-flex justify-content-center">
-                    <a [routerLink]="['/details/'+pokemon.id]" class="btn btn-details">Show details</a>
+                    <a [routerLink]="['/details/'+pokemon.id]" class="btn btn-details">{{"Show details" | translate }}</a>
                 </div>
             </div>
         </div>

@@ -11,33 +11,33 @@
         </div>
         <div class="attributes-container fw-bolder">
             <div class="col attribute-content">
-                <p class="fw-bolder">Abilities</p>
-                <span class="card-text blue-font" *ngFor="let a of data.abilities; let isLast = last">{{a.ability.name}}{{ !isLast ? ' / ' : ''}}</span>
+                <p class="fw-bolder">{{'Abilities' | translate}}</p>
+                <span class="card-text blue-font" *ngFor="let a of data.abilities; let isLast = last">{{a.ability.name }}{{ !isLast ? ' / ' : ''}}</span>
             </div>
             <div class="col attribute-content">
-                <p class="fw-bolder">Type</p>
+                <p class="fw-bolder">{{'Type' | translate}}</p>
                 <span class="card-text blue-font" *ngFor="let t of data.types; let isLast = last">{{t.type.name}}{{ !isLast ? ' / ' : ''}}</span>
             </div>
             <div class="col attribute-content">
-                <p class="fw-bolder">Order number</p>
+                <p class="fw-bolder">{{'Order number' | translate}}</p>
                 <span class="card-text blue-font">{{data.id}}</span>
             </div>
             <div class="col attribute-content" *ngIf="evo">
-                <p class="fw-bolder">Possible evolutions</p>
+                <p class="fw-bolder">{{'Possible evolutions' | translate}}</p>
                 <span class="card-text blue-font" *ngFor="let e of evo.chain.evolves_to">{{e.species.name}}</span>
             </div>
         </div>
         <hr class="seperator mx-3">
         <div class="moves-container">
             <div class="col text-center mt-4">
-                <p class="fw-bolder">Moves - <span class="blue-font">{{data.moves.length}} <i class="fas fa-angle-double-down"></i></span></p>
+                <p class="fw-bolder">{{'Moves' | translate}} - <span class="blue-font">{{data.moves.length}} <i class="fas fa-angle-double-down"></i></span></p>
                 <ul class="list-group">
                     <li class="list-group-item border-top list-group-item-primary text-dark" *ngFor="let m of data.moves">{{m.move.name}}</li>
                 </ul>
             </div>
         </div>
         <div class="text-center mt-4">
-            <a routerLink="/" class='btn btn-lg back-btn'><i class="fas fa-reply"></i> Go Back</a>
+            <a routerLink="/" class='btn btn-lg back-btn'><i class="fas fa-reply"></i> {{'Go back' | translate}}</a>
         </div>
     </div>
         

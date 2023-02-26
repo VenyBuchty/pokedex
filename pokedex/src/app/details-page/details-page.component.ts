@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'details-page',
@@ -14,8 +15,8 @@ export class DetailsPageComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    private dataService: DataService
-  ) { }
+    private dataService: DataService,
+  ) {}
 
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];

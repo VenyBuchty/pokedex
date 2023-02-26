@@ -1,3 +1,15 @@
 <div class="py-4 text-center background">
-    <a routerLink="/"><img class="d-block mx-auto mb-4" src="../../assets/img/Pokedex.png" alt="logo" height="180rem"></a>
+    <a routerLink="/"><img class="d-block mx-auto mb-4" src="/pokedex/assets/img/Pokedex.png" alt="logo" height="180rem"></a>
+</div>
+
+<div class="dropdown d-flex justify-content-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Language
+    </button>
+    <ul class="dropdown-menu text-center">
+        <li><a href="#" (click)="switchLanguage('en')">English</a></li>
+        <li><a href="#" (click)="switchLanguage('cz')">Czech</a></li>
+        <li><a href="#" (click)="switchLanguage('fr')">French</a></li>
+        <li><a href="#" (click)="switchLanguage('es')">Spanish</a></li>
+    </ul>
 </div>
